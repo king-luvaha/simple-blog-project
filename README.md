@@ -2,6 +2,8 @@
 
 A simple, file-based blog application built with Node.js, Express, and EJS. This application allows you to create, edit, and manage blog articles through an admin interface while providing a clean public view for readers.
 
+![Simple Blog](simple-blog.gif)
+
 ## Features
 
 - **Public Blog Interface**: Clean, responsive design for reading articles
