@@ -1,3 +1,4 @@
+# Personal Blog Application
 
 A simple, file-based blog application built with Node.js, Express, and EJS. This application allows you to create, edit, and manage blog articles through an admin interface while providing a clean public view for readers.
 
@@ -49,20 +50,20 @@ npm --version
 ## Installation
 
 1. **Clone or download the project**
-
+    
     ```bash
     git clone <your-repository-url>
-    cd blog-project
+    cd simple-blog-project
     ```
-
-2. **Install dependencies**
-
+    
+2. **Install package.json file**
+    
     ```bash
-    npm install
+    npm init -y
     ```
-
+    
 3. **Create package.json** (if not already present)
-
+    
     ```json
     {
       "name": "personal-blog",
@@ -87,19 +88,19 @@ npm --version
       "license": "MIT"
     }
     ```
-
+    
 4. **Install the required dependencies**
-
+    
     ```bash
     npm install express ejs basic-auth body-parser
     ```
-
+    
 5. **Optional: Install nodemon for development**
-
+    
     ```bash
     npm install --save-dev nodemon
     ```
-
+    
 
 ## Configuration
 
@@ -172,6 +173,179 @@ The application will be available at: `http://localhost:3000`
 - **Creating Articles**: Fill in the title and content, then click "Publish Article"
 - **Editing Articles**: Modify the title and content, then click "Update Article"
 - **Deleting Articles**: Confirm deletion by clicking the "Delete" button
+
+### Writing Articles with HTML
+
+The article content field supports HTML formatting. You can use various HTML tags to enhance your articles:
+
+#### Basic Text Formatting
+
+```html
+<p>This is a paragraph with <strong>bold text</strong> and <em>italic text</em>.</p>
+<p>You can also use <b>bold</b> and <i>italic</i> tags.</p>
+<p>For highlighted text, use <mark>highlighted text</mark>.</p>
+<p>Create <u>underlined text</u> or <del>strikethrough text</del>.</p>
+```
+
+#### Headings
+
+```html
+<h2>Main Section Heading</h2>
+<h3>Subsection Heading</h3>
+<h4>Sub-subsection Heading</h4>
+```
+
+#### Lists
+
+```html
+<!-- Unordered list -->
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ul>
+
+<!-- Ordered list -->
+<ol>
+  <li>First step</li>
+  <li>Second step</li>
+  <li>Third step</li>
+</ol>
+```
+
+#### Links and Images
+
+```html
+<!-- External link -->
+<p>Visit <a href="https://example.com" target="_blank">this website</a>.</p>
+
+<!-- Internal link -->
+<p>Read our <a href="/article/123">previous article</a>.</p>
+
+<!-- Images -->
+<img src="/images/my-photo.jpg" alt="Description of image" style="max-width: 100%; height: auto;">
+```
+
+#### Code Examples
+
+```html
+<!-- Inline code -->
+<p>Use the <code>console.log()</code> function to debug.</p>
+
+<!-- Code blocks -->
+<pre><code>
+function hello() {
+    console.log("Hello, World!");
+}
+</code></pre>
+```
+
+#### Quotes and Citations
+
+```html
+<!-- Blockquote -->
+<blockquote>
+  <p>This is a famous quote from someone important.</p>
+  <cite>- Author Name</cite>
+</blockquote>
+
+<!-- Inline quote -->
+<p>As they say, <q>practice makes perfect</q>.</p>
+```
+
+#### Tables
+
+```html
+<table border="1" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+      <th>Header 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+      <td>Data 3</td>
+    </tr>
+    <tr>
+      <td>Data 4</td>
+      <td>Data 5</td>
+      <td>Data 6</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+#### Line Breaks and Horizontal Rules
+
+```html
+<p>This is the first line.<br>This is the second line.</p>
+<hr>
+<p>Content after a horizontal rule.</p>
+```
+
+#### HTML Structure Tips
+
+1. **Always wrap content in paragraphs**: Use `<p>` tags for regular text content
+2. **Use semantic HTML**: Choose tags based on meaning (e.g., `<strong>` for important text, `<em>` for emphasis)
+3. **Include alt text for images**: Always add descriptive `alt` attributes to images
+4. **Open external links in new tabs**: Add `target="_blank"` to external links
+5. **Responsive images**: Add `style="max-width: 100%; height: auto;"` to images
+
+#### Example Article Structure
+
+```html
+<h2>Introduction</h2>
+<p>Welcome to this comprehensive guide on <strong>web development</strong>. In this article, we'll explore various techniques and best practices.</p>
+
+<h3>Getting Started</h3>
+<p>First, you'll need to set up your development environment:</p>
+<ol>
+  <li>Install a code editor like <a href="https://code.visualstudio.com/" target="_blank">VS Code</a></li>
+  <li>Set up version control with Git</li>
+  <li>Choose a framework or library</li>
+</ol>
+
+<h3>Key Concepts</h3>
+<p>Here are some important concepts to understand:</p>
+<ul>
+  <li><strong>HTML</strong>: The structure of web pages</li>
+  <li><strong>CSS</strong>: Styling and layout</li>
+  <li><strong>JavaScript</strong>: Interactive functionality</li>
+</ul>
+
+<blockquote>
+  <p>The best way to learn web development is by building real projects.</p>
+  <cite>- Experienced Developer</cite>
+</blockquote>
+
+<h3>Code Example</h3>
+<p>Here's a simple HTML structure:</p>
+<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>For more information, check out <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a>.</p>
+```
+
+#### Important Notes
+
+- **HTML is rendered**: The blog displays HTML tags as formatted content, not as plain text
+- **Test your formatting**: Use the preview feature if available, or publish and check the result
+- **Keep it accessible**: Use proper heading hierarchy and descriptive link text
+- **Validate your HTML**: Ensure tags are properly closed and nested
+- **Security consideration**: Only use trusted HTML - avoid JavaScript or potentially harmful content
 
 ## File Storage
 

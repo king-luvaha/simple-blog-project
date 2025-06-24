@@ -26,3 +26,6 @@ Thumbs.db
 
 # Article backups (optional)
 articles/*.bak
+
+# Article json files
+articles/
