@@ -454,3 +454,5 @@ For issues and questions:
 ---
 
 **Note**: This is a simple blog application intended for personal use or small projects. For production use with high traffic, consider using a proper database and implementing additional security measures.
+
+Roadmap Project URL: https://roadmap.sh/projects/personal-blog
