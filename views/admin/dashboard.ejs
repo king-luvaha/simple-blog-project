@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <nav>
+      <a href="/admin/add">Add New Article</a> |
+      <a href="/">View Public Site</a>
+    </nav>
+  </header>
+  
+  <main>
+    <h2>Manage Articles</h2>
+    
+    <% if (articles.length === 0) { %>
+      <p>No articles yet. <a href="/admin/add">Add your first article</a></p>
+    <% } else { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% articles.forEach(article => { %>
+            <tr>
+              <td><%= article.title %></td>
+              <td><%= new Date(article.date).toLocaleDateString() %></td>
+              <td class="actions">
+                <a href="/admin/edit/<%= article.id %>">Edit</a>
+                <form action="/admin/delete/<%= article.id %>" method="POST" style="display: inline;">
+                  <button type="submit">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </main>
+  
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> My Personal Blog</p>
+  </footer>
+</body>
+</html>
