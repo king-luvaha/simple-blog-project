@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Blog</h1>
+  </header>
+  
+  <main>
+    <section class="articles-list">
+      <h2>Latest Articles</h2>
+      
+      <% if (articles.length === 0) { %>
+        <p>No articles yet. Check back soon!</p>
+      <% } else { %>
+        <ul>
+          <% articles.forEach(article => { %>
+            <li>
+              <h3><a href="/article/<%= article.id %>"><%= article.title %></a></h3>
+              <p class="date">Published on: <%= new Date(article.date).toLocaleDateString() %></p>
+            </li>
+          <% }) %>
+        </ul>
+      <% } %>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> My Personal Blog</p>
+  </footer>
+</body>
+</html>
